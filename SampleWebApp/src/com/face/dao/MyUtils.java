@@ -37,6 +37,7 @@ public class MyUtils {
 	   }
 	   public static Connection getStoredConnection(ServletRequest request) {
 	       Connection conn = (Connection) request.getAttribute(ATT_NAME_CONNECTION);
+	       System.out.println("getstoredconnection");
 	       return conn;
 	   }
 }

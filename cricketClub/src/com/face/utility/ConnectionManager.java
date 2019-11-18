@@ -7,18 +7,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class MySQLConnUtils {
+public class ConnectionManager {
 	static Connection conn=null;
 	public static Properties loadPropertiesFile()throws Exception{
 		//property file for modular coding
 		Properties prop=new Properties();//Object for Properties class
-		InputStream in=new FileInputStream("C:\\Users\\USER\\git\\JAVA_Servlet_Programs\\SampleWebApp\\src\\resources\\jdbc.properties");
+		InputStream in=new FileInputStream("C:\\Users\\USER_2\\eclipse-workspace\\cricketClub\\resources\\jdbc.properties");
 		prop.load(in);
 		in.close();
 		return prop;
 		
 	}
-	public static Connection getConnection() throws Exception
+	public Connection getConnection() throws Exception
 	{
 		Properties prop=loadPropertiesFile();
 		final String driver=prop.getProperty("driver");
@@ -35,6 +35,14 @@ public class MySQLConnUtils {
 		}
 		try {
 			conn=DriverManager.getConnection(url,username,password);
+			/*if (conn != null)
+			{
+				System.out.println("Connected");
+			}
+			else
+			{
+				System.out.println("not Connected");
+			}*/
 		
 		}
 		catch (SQLException e) {
@@ -46,4 +54,5 @@ public class MySQLConnUtils {
 		return conn;
 		
 	}
+
 }

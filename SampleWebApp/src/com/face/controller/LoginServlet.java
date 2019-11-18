@@ -53,6 +53,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		System.out.println("doPost login servlet");
 		String userName = request.getParameter("userName");
 	       String password = request.getParameter("password");
 	       String rememberMeStr = request.getParameter("rememberMe");
@@ -83,6 +84,7 @@ public class LoginServlet extends HttpServlet {
 	           user = new UserAccount();
 	           user.setUserName(userName);
 	           user.setPassword(password);
+	           System.out.println("hi error occured in login servlet");
 	           // Store information in request attribute, before forward.
 	           request.setAttribute("errorString", errorString);
 	           request.setAttribute("user", user);
@@ -97,6 +99,7 @@ public class LoginServlet extends HttpServlet {
 	       else {
 	           HttpSession session = request.getSession();
 	           MyUtils.storeLoginedUser(session, user);
+	           System.out.println("be happy no error in login servlet");
 	           // If user checked "Remember me".
 	           if (remember) {
 	               MyUtils.storeUserCookie(response, user);

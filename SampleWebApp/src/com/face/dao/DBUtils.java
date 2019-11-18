@@ -15,6 +15,8 @@ public class DBUtils {
 	       PreparedStatement pstm = conn.prepareStatement(sql);
 	       pstm.setString(1, userName);
 	       pstm.setString(2, password);
+	       System.out.println("username"+userName);
+	       System.out.println("password"+password);
 	       ResultSet rs = pstm.executeQuery();
 	       if (rs.next()) {
 	           String gender = rs.getString("Gender");
