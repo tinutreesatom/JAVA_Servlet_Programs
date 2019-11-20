@@ -35,6 +35,13 @@ public class MySQLConnUtils {
 		}
 		try {
 			conn=DriverManager.getConnection(url,username,password);
+			if(conn!=null) {
+				System.out.println("connected");
+			}
+			else
+			{
+				System.out.println("not connected");
+			}
 		
 		}
 		catch (SQLException e) {

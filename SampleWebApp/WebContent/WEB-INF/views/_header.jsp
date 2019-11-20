@@ -13,7 +13,7 @@
 		</div>
 		<div style="float:right;padding:10px;text-align:right">
 		<!-- user store in session with attribute -->
-		Hello<b>${loginedUser.username}</b>
+		Hello<b>${loginedUser.userName}</b>
 		<br/>
 		Search<input name="search">
 		</div>

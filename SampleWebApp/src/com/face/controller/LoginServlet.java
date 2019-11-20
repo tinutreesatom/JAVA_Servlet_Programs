@@ -16,11 +16,12 @@ import com.face.bo.UserAccount;
 import com.face.dao.DBUtils;
 import com.face.dao.MyUtils;
 
-/**
+/**@author Tinu treesa Tom 
+ * 16-11-2019
  * Servlet implementation class LoginServlet
  */
 //@WebServlet("/login")
-@WebServlet(urlPatterns = { "/login" })
+@WebServlet(urlPatterns = {"/login"})
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		System.out.println("Welcome to Login Servlet");
 	       // Forward to /WEB-INF/views/loginView.jsp
 	       // (Users can not access directly into JSP pages placed in WEB-INF)
